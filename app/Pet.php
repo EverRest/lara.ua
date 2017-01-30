@@ -10,6 +10,11 @@ class Pet extends Model
         'name','description','address'
     ];
 
+    public function getAll()
+    {
+        
+    }
+    
     public function user()
     {
        return $this->belongsTo(User::class);
