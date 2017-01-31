@@ -24,6 +24,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Font Awesome cdn -->
     <script src="https://use.fontawesome.com/02480bb558.js"></script>
+    <!-- jQuery validation plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
     <script src="{{ URL::asset('js/map.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk-mcobWAlYgndPnBpcuoFDQT3IBjJMko&callback=initMap" async defer></script>
     <script>
@@ -51,9 +53,9 @@
         </div>
         <form id="search" method="POST" class="navbar-form navbar-left" role="search">
             <div class="form-group">
-                <input type="text" id="search-field" name="search-field" class="form-control" placeholder="Search">
+                <input type="text" id="search-field" name="search-field" class="form-control" placeholder="Search...">
             </div>
-            <button type="submit" class="btn btn-primary">Go!</button>
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Go!</button>
         </form>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -64,8 +66,8 @@
                     <li><a href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>
                     <li><a href="{{ url('/register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
                 @else
-                    <li><a href="{{ url('/gallery') }}"><i class="fa fa-camera" aria-hidden="true"></i> Gallery</a></li>
-                    <li><a href="{{ url('/add') }}"><i class="fa fa-paw" aria-hidden="true"></i> Add</a></li>
+                    <li><a href="{{ url('/store') }}"><i class="fa fa-camera" aria-hidden="true"></i> Gallery</a></li>
+                    <li data-toggle="modal" data-target="#pet-form"><a href="#"><i class="fa fa-paw" aria-hidden="true"></i> Add</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>

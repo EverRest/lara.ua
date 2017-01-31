@@ -12,3 +12,7 @@ body {
     min-height: 1000px;
     width: 100%;
 }
+
+#basic-addon3 {
+    cursor: pointer;
+}
